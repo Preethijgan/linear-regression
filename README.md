@@ -85,7 +85,19 @@ plt.ylabel('Predicted Values')
 plt.title('Actual vs. Predicted Values')
 plt.show()
 ```
-## 7. Result:
+## 7.Output:
+![Screenshot 2024-09-22 135724](https://github.com/user-attachments/assets/65eecebc-2cd9-477a-8561-f535cf70b7a9)
+```
+Actual values (y_test):
+8    420000
+1    200000
+Name: Price, dtype: int64
+Predicted values (y_pred):
+[418037.02695344 182210.72692622]
+```
+
+
+## 8. Result:
 Mean Squared Error (MSE): Measures the average of the squares of the errors. Lower values indicate better performance.
 R-squared (R²): Indicates the proportion of the variance in the dependent variable that is predictable from the independent variables. Values closer to 1 indicate better performance.
 Review the MSE and R² values to understand the model's performance.
