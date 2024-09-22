@@ -1,11 +1,13 @@
-### Project Summary:
+# Project Summary:
+## Aim:
+To predict the housing prices using Linear Regression.
 ## 1. Dataset Creation:
 We created a sample dataset related to housing prices. The dataset includes features such as the number of rooms (Rooms), area in square feet (Area), and age of the house in years (Age). The target variable is the price of the house (Price).
 ```
 import pandas as pd
 ```
 
-# Sample dataset
+### Sample dataset
 ```
 data = {
     'Rooms': [3, 2, 4, 3, 5, 4, 3, 2, 4, 5],
@@ -14,12 +16,12 @@ data = {
     'Price': [300000, 200000, 400000, 250000, 500000, 450000, 270000, 180000, 420000, 520000]
 }
 ```
-# Creating DataFrame
+### Creating DataFrame
 ```
 df = pd.DataFrame(data)
 ```
 
-# Display the DataFrame
+### Display the DataFrame
 ```
 print(df)
 ```
@@ -29,13 +31,13 @@ We split the dataset into features (X) and target (y), and then further split it
 from sklearn.model_selection import train_test_split
 ```
 
-# Splitting the data into features (X) and target (y)
+### Splitting the data into features (X) and target (y)
 ```
 X = df[['Rooms', 'Area', 'Age']]
 y = df['Price']
 ```
 
-# Splitting the data into training and testing sets
+### Splitting the data into training and testing sets
 ```
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 ```
@@ -45,7 +47,7 @@ We created and trained a linear regression model using the training data.
 from sklearn.linear_model import LinearRegression
 ```
 
-# Creating and training the model
+### Creating and training the model
 ```
 model = LinearRegression()
 model.fit(X_train, y_train)
@@ -53,7 +55,7 @@ model.fit(X_train, y_train)
 ## 4. Making Predictions:
 We made predictions on the test data using the trained model.
 
-# Making predictions
+### Making predictions
 y_pred = model.predict(X_test)
 ## 5. Model Evaluation:
 We evaluated the model's performance using Mean Squared Error (MSE) and R-squared (R²) metrics.
@@ -61,7 +63,7 @@ We evaluated the model's performance using Mean Squared Error (MSE) and R-square
 from sklearn.metrics import mean_squared_error, r2_score
 ```
 
-# Evaluating the model
+### Evaluating the model
 ```
 mse = mean_squared_error(y_test, y_pred)
 r2 = r2_score(y_test, y_pred)
@@ -75,7 +77,7 @@ We created a scatter plot to visualize the actual vs. predicted values.
 import matplotlib.pyplot as plt
 ```
 
-# Scatter plot of actual vs. predicted values
+### Scatter plot of actual vs. predicted values
 ```
 plt.scatter(y_test, y_pred)
 plt.xlabel('Actual Values')
@@ -83,9 +85,7 @@ plt.ylabel('Predicted Values')
 plt.title('Actual vs. Predicted Values')
 plt.show()
 ```
-# Summary of Results:
+## 7. Result:
 Mean Squared Error (MSE): Measures the average of the squares of the errors. Lower values indicate better performance.
 R-squared (R²): Indicates the proportion of the variance in the dependent variable that is predictable from the independent variables. Values closer to 1 indicate better performance.
-# Next Steps:
-Interpreting Results:
 Review the MSE and R² values to understand the model's performance.
